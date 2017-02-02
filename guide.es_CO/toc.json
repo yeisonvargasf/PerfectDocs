@@ -1,0 +1,281 @@
+{
+	"contents": [
+		{
+			"name": "Introducción",
+			"doc":  "introduction"
+		},
+		{
+			"name": "Empezando",
+			"doc":  "gettingStarted"
+		},
+		{
+			"name": "Empezando Desde El Inicio",
+			"doc": "gettingStartedFromScratch"
+		},
+		{
+			"name": "Un Manual Básico De Servicios Web y HTTP",
+			"doc":  "WebServicesPrimer"
+		},
+		{
+			"name": "La Estructura Del Repositorio",
+			"doc":  "repositoryLayout"
+		},
+		{
+			"name": "Construyendo Con El Administrador De Paquetes De Swift",
+			"doc":  "buildingWithSPM"
+		},
+		{
+			"name": "Configurando E Iniciando El HTTPServer",
+			"doc":  "HTTPServer"
+		},
+		{
+			"name": "Manejando Peticiones",
+			"doc":  "handlingRequests",
+			"contents": [
+				{
+					"name": "Enrutamiento",
+					"doc":  "routing"
+				},
+				{
+					"name": "HTTPRequest",
+					"doc":  "HTTPRequest",
+					"contents" : [
+						{
+							"name": "Usando Datos De Formulario",
+							"doc":  "formData"
+						},
+						{
+							"name": "Carga De Archivos",
+							"doc":  "fileUploads"
+						}
+
+					]
+				},
+				{
+					"name": "HTTPResponse",
+					"doc":  "HTTPResponse"
+				},
+				{
+					"name": "Peticiones & Filtros De Respuestas",
+					"doc":  "filters"
+				},
+				{
+					"name": "Filtros",
+					"doc":  "filters"
+				},
+				{
+					"name": "Sesiones",
+					"doc":  "sessions",
+					"contents" : [
+						{
+							"name": "CSRF",
+							"doc":  "csrf"
+						},
+						{
+							"name": "CORS",
+							"doc":  "cors"
+						}
+
+					]
+				},
+				{
+					"name": "JSON",
+					"doc":  "JSON"
+				},
+				{
+					"name": "Contenido Del Archivo Estático",
+					"doc":  "staticFileContent"
+				 },
+				 {
+				 "name": "Mustache",
+				 "doc":  "mustache"
+				 },
+				 {
+				 "name": "Log De Peticiones HTTP",
+				 "doc":  "HTTPRequestLogging"
+				 }
+			]
+		},
+		{
+			"name": "WebSockets",
+			"doc":  "webSockets"
+		},
+		{
+			"name": "Utilidades",
+			"doc":  "utilities",
+			"contents": [
+				{
+					"name": "Bytes",
+					"doc":  "bytes"
+				},
+				{
+					"name": "Peticiones De Red: CURL",
+					"doc":  "cURL"
+				},
+				{
+					"name": "Directorios",
+					"doc":  "dir"
+				},
+				{
+					"name": "Archivos",
+					"doc":  "file"
+				},
+				{
+					"name": "Protocolo De Medición De Google Analytics",
+					"doc":  "GoogleAnalytics"
+				},
+				{
+					"name": "Log",
+					"doc":  "log"
+				 },
+				 {
+				 "name": "Archivos De Log",
+				 "doc":  "logFiles"
+				 },
+				 {
+				 "name": "OAuth2 y Proveedores",
+				 "doc":  "OAuth2"
+				 },
+				 {
+				 "name": "Log Remoto",
+				 "doc":  "logRemote"
+				 },
+				{
+					"name": "SMTP",
+					"doc":  "SMTP"
+				},
+				{
+					"name": "Procesos",
+					"doc":  "sysProcess"
+				},
+				{
+					"name": "Hilos",
+					"doc":  "thread"
+				},
+				{
+					"name": "UUID",
+					"doc":  "UUID"
+				},
+				{
+					"name": "XML",
+					"doc":  "xml"
+				},
+				{
+					"name": "Zip",
+					"doc":  "zip"
+				}
+
+			]
+		},
+		{
+			"name": "Conectores De Bases De Datos",
+			"doc":  "databaseConnectors",
+			"contents": [
+				{
+					"name": "SQLite",
+					"doc":  "SQLite"
+				},
+				{
+					"name": "MySQL",
+					"doc":  "MySQL"
+				},
+				{
+					"name": "MariaDB",
+					"doc":  "MariaDB"
+				},
+				{
+					"name": "PostgreSQL",
+					"doc":  "PostgreSQL"
+				},
+				{
+					"name": "FileMaker",
+					"doc":  "filemaker"
+				},
+				{
+					"name": "MongoDB",
+					"doc":  "MongoDB",
+					"contents": [
+						{
+							"name": "Bases De Datos con MongoDB",
+							"doc":  "MongoDB-Database"
+						},
+						{
+							"name": "Colecciones en MongoDB",
+							"doc":  "MongoDB-Collections"
+						},
+						{
+							"name": "Cliente de MongoDB",
+							"doc":  "MongoDB-Client"
+						},
+						{
+							"name": "Trabajando con BSON",
+							"doc":  "MongoDB-BSON"
+						}
+		
+					]
+				},
+				{
+					"name": "Apache CouchDB",
+					"doc":  "CouchDB"
+				},
+				{
+					"name": "LDAP",
+					"doc":  "LDAP"
+				}
+
+			]
+		},
+				{
+			"name": "StORM, un ORM de Swift",
+			"doc":  "StORM",
+			"contents": [
+				{
+					"name": "Introducción a StORM",
+					"doc":  "StORM"
+				},
+				{
+					"name": "Configurando una clase",
+					"doc":  "StORM-Setting-up-a-class"
+				},
+				{
+					"name": "Guardando, Recuperando y Borrando Filas",
+					"doc":  "StORM-Saving-Retrieving-and-Deleting-Rows"
+				},
+				{
+					"name": "StORMCursor",
+					"doc":  "StORM-Cursor"
+				},
+				{
+					"name": "Insertando filas",
+					"doc":  "StORM-Insert"
+				},
+				{
+					"name": "Actualizando filas",
+					"doc":  "StORM-Update"
+				},
+				{
+					"name": "PostgresStORM",
+					"doc":  "StORM-PostgreSQL"
+				},
+				{
+					"name": "MySQLStORM",
+					"doc":  "StORM-MySQL"
+				},
+				{
+					"name": "SQLiteStORM",
+					"doc":  "StORM-SQLite"
+				},
+				{
+					"name": "CouchDBStORM",
+					"doc":  "StORM-CouchDB"
+				}
+
+			]
+		},
+		{
+			"name": "Autenticación Con Turnstile",
+			"doc":  "Turnstile"
+		}
+
+	]
+}
