@@ -87,31 +87,24 @@ PerfectLDAP 使用一个`LDAP.Login`对象来实现不同的登录选项。各�
 ``` swift
 let credential = LDAP.Login(binddn: "CN=judy,CN=Users,DC=perfect,DC=com", password: "0penLDAP")
 ```
+### GSSAPI
 
-### Digest-MD5 （⚠️试验性性质⚠️)
-
-Digest-MD5 加密方式采用内部交互登录。调用构造函数`LDAP.login(authname: String, user: String, password: String, realm: String)` 可尝试该加密方法：
+如果需要使用GSSAPI进行身份验证，请调用`LDAP.login(user:String, mechanism: AuthType)`函数构造登录信息（前提是用户已经提前取得有效票据）:
 
 ``` swift
-let credential = LDAP.Login(authname: "judy", user: "DN:CN=judy,CN=Users,DC=perfect,DC=com", password: "0penLDAP", realm: "PERFECT.COM")
+// 下列操作可以生成一个GSSAPI票据
+let credential = LDAP.login(user: "judy", mechanism: .GSSAPI)
 ```
 
+### GSS-SPNEGO 和 Digest-MD5 （⚠️试验性质⚠️)
+
+对于其他 SASL 交互式登录机制，比如GSS-SPNEGO 和 Digest-MD5，请调用构造函数`LDAP.login(authname: String, user: String, password: String, realm: String, mechanism: AuthType)` 获取登录配置：
+
+``` swift
+// 将登录信息配置为DIGEST-MD5
+let credential = LDAP.Login(authname: "judy", user: "DN:CN=judy,CN=Users,DC=perfect,DC=com", password: "0penLDAP", realm: "PERFECT.COM", mechanism: .DIGEST)
+```
 *⚠️注意⚠️* 参数 `authname` 等价于 `SASL_CB_AUTHNAME`，而 `user` 对应 `SASL_CB_USER`名称。如果您的程序不需要其中的某些参数，只要将该参数设置为空（“”）即可忽略。
-
-### GSSAPI 和 GSS-SPNEGO （⚠️试验性性质⚠️)
-
-如果您希望程序中使用 GSSAPI / GSS-SPNEGO 认证方式，请调用`LDAP.login(mechanism: AuthType)` 构造函数，参考如下：
-
-``` swift
-// 设置登录方式为 GSSAPI
-let credential = LDAP.login(mechanism: .GSSAPI)
-```
-或者
-
-``` swift
-// 设置登录方式为 GSS-SPNEGO
-let credential = LDAP.login(mechanism: .SPNEGO)
-```
 
 ## 检索
 
@@ -148,7 +141,7 @@ connection.search(base: "CN=Users,DC=perfect,DC=com", filter:"(objectclass=*)") 
 - sortedBy: String, 用于排序的字符串；可以用 `LDAP.sortingString()` 函数构造。
 - completion: 回调函数，其返回参数为一个字典。如果字典为空则意味着查询失败。
 
-#### 服务器端排序 （⚠️试验性性质⚠️)
+#### 服务器端排序 （⚠️试验性质⚠️)
 其中，`sortedBy` 参数是一个字符串，通知远程服务器按照该字符串的内容进行排序。但是您可以选择用下列方法构造该字符串，即用一个元组数组表示希望用一系列字段及其排序方法进行排序：
 
 ``` swift
@@ -169,7 +162,7 @@ connection.limitation = 1000
 
 PerfectLDAP 为属性操作提供了增删改功能。每个操作都有同步和异步选项。
 
-### 增加属性 （⚠️试验性性质⚠️)
+### 增加属性 （⚠️试验性质⚠️)
 
 函数 `LDAP.add()` 可以针对一个特定 DN 增加属性，参数如下：
 - distinguishedName: String, 目标 DN （唯一命名）
@@ -213,7 +206,7 @@ connection.modify(distinguishedName: "CN=judy,CN=User,DC=perfect,DC=com", attrib
 }
 ```
 
-### 删除属性（⚠️试验性性质⚠️)
+### 删除属性（⚠️试验性质⚠️)
 
 函数 `LDAP.delete()` 用于删除特定DN的所有属性，只有一个参数：
 - distinguishedName: String, 目标 DN （唯一命名）
