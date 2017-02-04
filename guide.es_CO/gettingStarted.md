@@ -1,6 +1,6 @@
 ## Empezando
 
-Está impaciente para empezar a programar con Swift y Perfect? Esta guía le proporcionará todo lo que necesite saber para ejecutar Perfect, y para crear su primera aplicación. 
+¿Está impaciente para empezar a programar con Swift y Perfect? Esta guía le proporcionará todo lo que necesite saber para ejecutar Perfect, y para crear su primera aplicación. 
 
 Después de leer esta guía, sabrás:
 
